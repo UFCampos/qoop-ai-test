@@ -10,7 +10,7 @@ export default function ContactInfo() {
       transition={{ duration: 0.5 }}
     >
       <div className="space-y-6">
-        <div className="flex items-start space-x-4">
+        <div className="flex items-start space-x-4 overflow-x-hidden">
           <Mail className="h-6 w-6 text-primary mt-1" />
           <div>
             <h3 className="font-bold">Email Us</h3>

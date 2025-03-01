@@ -6,7 +6,7 @@ import ContactForm from "./ContactForm";
 
 export default function ContactSection() {
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-muted/30 flex justify-center">
+    <section className="w-full py-16 md:py-24 lg:py-32 bg-muted/30 flex justify-center overflow-x-hidden">
       <div className="container px-4 md:px-6">
         <div className="flex flex-col items-center text-center space-y-4 mb-12">
           <motion.h2
