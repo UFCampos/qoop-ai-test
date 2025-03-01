@@ -7,15 +7,15 @@ export default function HeroSection() {
     return (
         <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
             <motion.div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat dark:invert grayscale"
+                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat grayscale"
                 style={{
-                    backgroundImage: "url('/friends.png')",
+                    backgroundImage: "url('/coworkers.jpg')",
                 }}
                 initial={{ y: -50 }}
                 animate={{ y: 0 }}
                 transition={{ duration: 1, ease: "easeOut" }}
             >
-                <div className="absolute inset-0 bg-red-500/90" />
+                <div className="absolute inset-0 bg-zinc-800/65" />
             </motion.div>
 
             <div className="container relative z-10 px-4 md:px-6 py-12 md:py-24 lg:py-32">
