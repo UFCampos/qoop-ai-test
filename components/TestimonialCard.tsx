@@ -25,7 +25,7 @@ export default function TestimonialCard({ testimonial, variants }: TestimonialCa
               />
             ))}
           </div>
-          <p className="text-destructive-foreground mb-4 line-clamp-4">&quot;{testimonial.body}&quot;</p>
+          <p className="mb-4 line-clamp-4">&quot;{testimonial.body}&quot;</p>
           <div className="flex items-center mt-auto">
             <div className="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold">
               {testimonial.name.charAt(0)}
