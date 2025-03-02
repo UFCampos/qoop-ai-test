@@ -5,13 +5,13 @@ import HeroSection from "@/components/hero-section";
 import NewsletterSection from "@/components/newsletter";
 import PricingSection from "@/components/plans";
 import TestimonialsSection from "@/components/testimonials";
+import { type Locale } from "@/i18n-config";
 import { getDictionary } from "@/lib/dictionary";
 
-export default async function Home({
-  params: { lang },
-}: {
-  params: { lang: "en" | "es" }
+export default async function Home(props: {
+  params: Promise<{ lang: Locale }>;
 }) {
+  const { lang } = await props.params;
   const dict = await getDictionary(lang)
 
   return (
