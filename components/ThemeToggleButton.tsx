@@ -13,6 +13,7 @@ export default function ThemeToggleButton() {
       onClick={() => {
         setTheme(theme === "dark" ? "light" : "dark");
       }}
+      className="justify-self-start"
     >
       {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
     </Button>

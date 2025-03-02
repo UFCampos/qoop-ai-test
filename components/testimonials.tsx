@@ -1,14 +1,22 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useTransform, useScroll } from "framer-motion";
 import { Loader2 } from "lucide-react";
 import { useFetchTestimonials } from "@/hooks/useFetchTestimonials";
 import TestimonialCard from "./TestimonialCard";
 import SectionHeader from "./SectionHeader";
+import Image from "next/image";
+import { useRef } from "react";
 
 export default function TestimonialsSection() {
   const { testimonials, loading, error, analyzingIds } = useFetchTestimonials();
-
+  const container = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: container,
+    offset: ['start end', 'end start'] 
+  });
+  const y = useTransform(scrollYProgress, [0, 1], [0, 800]);
+console.log(scrollYProgress, 'SCROLL')
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -29,8 +37,21 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="w-full py-16 md:py-24 lg:py-32 bg-muted/50">
-      <div className="container px-4 md:px-6">
+    <section className="relative w-full py-16 md:py-24 lg:py-32 bg-muted/50 overflow-hidden">
+      <div className="container px-4 md:px-6" ref={container}>
+        <motion.div
+          className="absolute bottom-100 left-100 w-full h-full flex justify-center items-center -z-10"
+          style={{ y }}
+          onScroll={() => {console.log('scroll', y)}}
+        >
+          <Image
+            src={'/office-laptop.webp'}
+            alt="Office Laptop"
+            width={600}
+            height={500}
+            className="object-cover"
+          />
+        </motion.div>
         <SectionHeader
           title="What Our Customers Say"
           subtitle="Don't just take our word for it — hear from our satisfied customers"
