@@ -8,6 +8,7 @@ import SectionHeader from "./SectionHeader";
 import Image from "next/image";
 import { useRef } from "react";
 import { type getDictionary } from "@/lib/dictionary";
+import image from "@/public/office-laptop.webp";
 
 interface TestimonialProps {
   dict: Awaited<ReturnType<typeof getDictionary>>["testimonials"];
@@ -50,7 +51,7 @@ console.log(scrollYProgress, 'SCROLL')
           onScroll={() => {console.log('scroll', y)}}
         >
           <Image
-            src={'/office-laptop.webp'}
+            src={image}
             alt="Office Laptop"
             width={600}
             height={500}

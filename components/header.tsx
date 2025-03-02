@@ -3,6 +3,7 @@
 import Image from "next/image";
 import ThemeToggleButton from "./ThemeToggleButton";
 import LanguageSwitcher from "./LanguageSwitcher";
+import image from "@/public/qoopai-logo.png";
 
 export default function Header({
   lang,
@@ -13,7 +14,7 @@ export default function Header({
     <header className="flex justify-between items-center py-4 px-8 sticky top-0 left-0 z-50">
       <ThemeToggleButton />
       <Image
-        src={"/qoopai-logo.png"}
+        src={image}
         width={125}
         height={100}
         alt="logo"
