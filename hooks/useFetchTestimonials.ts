@@ -65,6 +65,7 @@ export function useFetchTestimonials() {
       const sentiment = await analyzeSentiment(text, rating);
       setTestimonials((prev) => prev.map((t) => (t.id === id ? { ...t, sentiment } : t)));
     } catch (error) {
+      setError("Failed to analyze sentiment for testimonial with ID " + id);
       console.error("Error analyzing sentiment:", error);
     } finally {
       setAnalyzingIds((prev) => {
