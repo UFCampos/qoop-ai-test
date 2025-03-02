@@ -7,7 +7,7 @@ import TestimonialCard from "./TestimonialCard";
 import SectionHeader from "./SectionHeader";
 
 export default function TestimonialsSection() {
-  const { testimonials, loading, error } = useFetchTestimonials();
+  const { testimonials, loading, error, analyzingIds } = useFetchTestimonials();
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -42,32 +42,9 @@ export default function TestimonialsSection() {
             <span className="ml-2 text-lg">Loading testimonials...</span>
           </div>
         ) : error ? (
-          <div className="flex flex-col items-center justify-center py-12">
-            <div className="text-destructive">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-12 w-12 mb-4"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M13 16h-1v-4h-1m0-4h.01M12 2a10 10 0 100 20 10 10 0 000-20z"
-                />
-              </svg>
-              <p className="text-lg font-semibold">Oops! Something went wrong.</p>
-              <p className="mt-2">Error: {error}</p>
-              <p className="mt-2">Either your network may have issues or our servers are down. Please try again later or contact us.</p>
-            </div>
-            <button
-              onClick={() => window.location.reload()}
-              className="mt-6 px-4 py-2 bg-primary text-white rounded-md"
-            >
-              Refresh page
-            </button>
+          <div className="text-center text-red-500 py-8">
+            <p>Error: {error}</p>
+            <p>Please try again later.</p>
           </div>
         ) : (
           <motion.div
@@ -75,9 +52,15 @@ export default function TestimonialsSection() {
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
+            viewport={{ once: true }}
           >
             {testimonials.map((testimonial) => (
-              <TestimonialCard key={testimonial.id} testimonial={testimonial} variants={itemVariants} />
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                analyzing={analyzingIds.has(testimonial.id)}
+                variants={itemVariants}
+              />
             ))}
           </motion.div>
         )}
