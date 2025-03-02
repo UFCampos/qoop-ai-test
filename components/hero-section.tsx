@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { type getDictionary } from "@/lib/dictionary"
 import { motion } from "framer-motion"
-
+import image from "@/public/coworkers.jpg"
 interface HeroSectionProps {
     dict: Awaited<ReturnType<typeof getDictionary>>["hero"]
   }
@@ -14,7 +14,7 @@ export default function HeroSection({ dict }: HeroSectionProps) {
             <motion.div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat grayscale"
                 style={{
-                    backgroundImage: "url('/coworkers.jpg')",
+                    backgroundImage: `url(${image.src})`,
                 }}
                 initial={{ y: -50 }}
                 animate={{ y: 0 }}
