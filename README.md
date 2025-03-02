@@ -22,6 +22,7 @@ Qoop.ai is a modern, interactive, and high-performance home page for a fictional
 - **Interactive Elements:** Hover and click effects
 - **Newsletter Subscription Form** (mocked API call)
 - **AI Analysis:** Analyses and categorizes testimonials by sentiment.
+- **Translation:** Support for both English and Spanish using Next.js react-i18n 
 
 ## Getting Started
 
