@@ -50,8 +50,8 @@ export default function PricingPlanCard({ plan, variants }: PricingPlanCardProps
         </CardContent>
         <CardFooter>
           <Button
-            className={`w-full ${
-              plan.recommended ? "bg-primary hover:bg-primary/90" : "bg-secondary hover:bg-secondary/90"
+            className={`w-full text-lg ${
+              plan.recommended ? "bg-primary hover:bg-primary/90 font-bold" : "bg-secondary hover:bg-secondary/90 text-secondary-foreground"
             }`}
             size="lg"
           >
