@@ -24,14 +24,16 @@ export async function analyzeSentiment(text: string, rating: number): Promise<Se
         "score": number
       }
         DON'T add any text other than the JSON response.
+        Respond with the raw JSON, don't add any markdown format
 
       Here's the testimonial: "${text} - Rating: ${rating}/5"
     `
     
     const { text: analysis } = await generateText({
-      model: groq('llama-3.3-70b-versatile'),
+      model: groq('llama-3.1-8b-instant'),
       prompt: prompt,
-      
+      temperature: 0,
+      maxRetries: 3,
     })
     console.log(analysis)
     const result = JSON.parse(analysis)
