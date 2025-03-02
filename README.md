@@ -24,6 +24,15 @@ Qoop.ai is a modern, interactive, and high-performance home page for a fictional
 - **AI Analysis:** Analyses and categorizes testimonials by sentiment.
 - **Translation:** Support for both English and Spanish using Next.js react-i18n 
 
+## UI Preview
+![image](https://github.com/user-attachments/assets/89e597b3-9e7d-4b8f-82b0-f03df09f5ec9)
+![image](https://github.com/user-attachments/assets/7b6ccc58-dc67-4cf5-b5ec-73b1298a237e)
+![image](https://github.com/user-attachments/assets/95fd3353-9c20-47f4-adca-c9c130ae6758) ![image](https://github.com/user-attachments/assets/2139addb-68e4-44c4-acb5-e7ab3a9f830e)![image](https://github.com/user-attachments/assets/b2f8ec5a-94ad-4b64-a1b0-6027d80068a8)![image](https://github.com/user-attachments/assets/71726c6a-2354-4a8d-8e8d-97b463863c63)
+
+
+
+
+
 ## Getting Started
 
 ### Prerequisites
