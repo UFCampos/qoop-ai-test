@@ -1,0 +1,178 @@
+{
+    "hero": {
+      "title": "Transform Your Digital Experience",
+      "subtitle": "Elevate your online presence with our cutting-edge platform designed to help you stand out in today's competitive market.",
+      "cta": "Get Started"
+    },
+    "features": {
+      "title": "Powerful Features",
+      "subtitle": "Everything you need to succeed in the digital landscape",
+      "items": [
+        {
+          "title": "Lightning Fast Performance",
+          "description": "Our platform is optimized for speed, ensuring your users have a seamless experience every time."
+        },
+        {
+          "title": "Enterprise-Grade Security",
+          "description": "Rest easy knowing your data is protected with our state-of-the-art security protocols."
+        },
+        {
+          "title": "Advanced Analytics",
+          "description": "Gain valuable insights with our comprehensive analytics dashboard and reporting tools."
+        },
+        {
+          "title": "Collaborative Workspace",
+          "description": "Enable your team to work together efficiently with our intuitive collaboration features."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What Our Customers Say",
+      "subtitle": "Don't just take our word for it — hear from our satisfied customers",
+      "loading": "Loading testimonials...",
+      "error": "Error loading testimonials. Please try again later.",
+      "verified": "Verified Customer",
+      "aiAnalysis": {
+        "analyzing": "Analyzing",
+        "analysis": "AI Analysis",
+        "score": "Sentiment Score"
+      }
+    },
+    "pricing": {
+      "title": "Simple, Transparent Pricing",
+      "subtitle": "Choose the plan that works best for you and your team",
+      "popular": "Most Popular",
+      "plans": [
+        {
+          "name": "Starter",
+          "price": "$29",
+          "description": "Perfect for individuals and small projects",
+          "features": ["Up to 5 projects", "Basic analytics", "24/7 email support", "1GB storage"],
+          "cta": "Get Started"
+        },
+        {
+          "name": "Professional",
+          "price": "$79",
+          "description": "Ideal for growing businesses and teams",
+          "features": [
+            "Unlimited projects",
+            "Advanced analytics",
+            "Priority support",
+            "10GB storage",
+            "Custom integrations",
+            "Team collaboration tools"
+          ],
+          "cta": "Try Pro"
+        },
+        {
+          "name": "Enterprise",
+          "price": "$199",
+          "description": "For large organizations with complex needs",
+          "features": [
+            "Everything in Professional",
+            "Dedicated account manager",
+            "Custom solutions",
+            "Unlimited storage",
+            "Advanced security features",
+            "API access"
+          ],
+          "cta": "Contact Sales"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Have questions or need assistance? We're here to help!",
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Your name",
+          "error": "Name is required"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Your email",
+          "error": "Email is required",
+          "invalid": "Email is invalid"
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Your message",
+          "error": "Message is required"
+        },
+        "submit": "Send Message",
+        "sending": "Sending...",
+        "success": "Message sent! We'll get back to you as soon as possible."
+      },
+      "contact": {
+        "email": {
+          "title": "Email Us",
+          "subtitle": "Our friendly team is here to help.",
+          "value": "hello@example.com"
+        },
+        "phone": {
+          "title": "Call Us",
+          "subtitle": "Mon-Fri from 8am to 5pm.",
+          "value": "+1 (555) 000-0000"
+        },
+        "visit": {
+          "title": "Visit Us",
+          "subtitle": "Come say hello at our office.",
+          "value": "123 Main Street, San Francisco, CA 94105"
+        }
+      }
+    },
+    "newsletter": {
+      "title": "Stay Updated",
+      "subtitle": "Subscribe to our newsletter to receive the latest updates, tips, and exclusive offers.",
+      "placeholder": "Enter your email",
+      "button": "Subscribe",
+      "subscribing": "Subscribing...",
+      "success": "You've successfully subscribed to our newsletter.",
+      "privacy": "We respect your privacy. Unsubscribe at any time.",
+      "error": {
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      }
+    },
+    "footer": {
+      "company": {
+        "title": "Company",
+        "links": {
+          "about": "About",
+          "careers": "Careers",
+          "press": "Press",
+          "blog": "Blog"
+        }
+      },
+      "product": {
+        "title": "Product",
+        "links": {
+          "features": "Features",
+          "pricing": "Pricing",
+          "integrations": "Integrations",
+          "faq": "FAQ"
+        }
+      },
+      "resources": {
+        "title": "Resources",
+        "links": {
+          "documentation": "Documentation",
+          "guides": "Guides",
+          "support": "Support",
+          "api": "API"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "privacy": "Privacy",
+          "terms": "Terms",
+          "cookies": "Cookie Policy",
+          "licenses": "Licenses"
+        }
+      },
+      "copyright": "© {year} Company, Inc. All rights reserved."
+    }
+  }
+    

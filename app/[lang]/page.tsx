@@ -5,11 +5,18 @@ import HeroSection from "@/components/hero-section";
 import NewsletterSection from "@/components/newsletter";
 import PricingSection from "@/components/plans";
 import TestimonialsSection from "@/components/testimonials";
+import { getDictionary } from "@/lib/dictionary";
 
-export default function Home() {
+export default async function Home({
+  params: { lang },
+}: {
+  params: { lang: string }
+}) {
+  const dict = await getDictionary(lang)
+
   return (
     <main className="min-h-screen">
-      <HeroSection />
+      <HeroSection dict={dict.hero}/>
       <FeaturesSection/>
       <TestimonialsSection/>
       <PricingSection/>

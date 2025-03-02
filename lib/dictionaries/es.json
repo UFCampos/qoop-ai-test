@@ -1,0 +1,178 @@
+{
+    "hero": {
+      "title": "Transforma tu Experiencia Digital",
+      "subtitle": "Eleva tu presencia en línea con nuestra plataforma de vanguardia diseñada para ayudarte a destacar en el mercado competitivo actual.",
+      "cta": "Comenzar"
+    },
+    "features": {
+      "title": "Características Poderosas",
+      "subtitle": "Todo lo que necesitas para tener éxito en el panorama digital",
+      "items": [
+        {
+          "title": "Rendimiento Ultrarrápido",
+          "description": "Nuestra plataforma está optimizada para la velocidad, asegurando que tus usuarios tengan una experiencia fluida en todo momento."
+        },
+        {
+          "title": "Seguridad de Nivel Empresarial",
+          "description": "Descansa tranquilo sabiendo que tus datos están protegidos con nuestros protocolos de seguridad de última generación."
+        },
+        {
+          "title": "Análisis Avanzado",
+          "description": "Obtén información valiosa con nuestro panel de análisis integral y herramientas de informes."
+        },
+        {
+          "title": "Espacio de Trabajo Colaborativo",
+          "description": "Permite que tu equipo trabaje junto de manera eficiente con nuestras funciones de colaboración intuitivas."
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "Lo que Dicen Nuestros Clientes",
+      "subtitle": "No solo tomes nuestra palabra: escucha a nuestros clientes satisfechos",
+      "loading": "Cargando testimonios...",
+      "error": "Error al cargar los testimonios. Por favor, inténtalo de nuevo más tarde.",
+      "verified": "Cliente Verificado",
+      "aiAnalysis": {
+        "analyzing": "Analizando",
+        "analysis": "Análisis IA",
+        "score": "Puntuación de Sentimiento"
+      }
+    },
+    "pricing": {
+      "title": "Precios Simples y Transparentes",
+      "subtitle": "Elige el plan que mejor se adapte a ti y a tu equipo",
+      "popular": "Más Popular",
+      "plans": [
+        {
+          "name": "Inicial",
+          "price": "$29",
+          "description": "Perfecto para individuos y proyectos pequeños",
+          "features": ["Hasta 5 proyectos", "Análisis básico", "Soporte por email 24/7", "1GB de almacenamiento"],
+          "cta": "Comenzar"
+        },
+        {
+          "name": "Profesional",
+          "price": "$79",
+          "description": "Ideal para negocios en crecimiento y equipos",
+          "features": [
+            "Proyectos ilimitados",
+            "Análisis avanzado",
+            "Soporte prioritario",
+            "10GB de almacenamiento",
+            "Integraciones personalizadas",
+            "Herramientas de colaboración en equipo"
+          ],
+          "cta": "Probar Pro"
+        },
+        {
+          "name": "Empresa",
+          "price": "$199",
+          "description": "Para organizaciones grandes con necesidades complejas",
+          "features": [
+            "Todo lo incluido en Profesional",
+            "Gerente de cuenta dedicado",
+            "Soluciones personalizadas",
+            "Almacenamiento ilimitado",
+            "Características de seguridad avanzadas",
+            "Acceso API"
+          ],
+          "cta": "Contactar Ventas"
+        }
+      ]
+    },
+    "contact": {
+      "title": "Ponte en Contacto",
+      "subtitle": "¿Tienes preguntas o necesitas ayuda? ¡Estamos aquí para ayudarte!",
+      "form": {
+        "name": {
+          "label": "Nombre",
+          "placeholder": "Tu nombre",
+          "error": "El nombre es requerido"
+        },
+        "email": {
+          "label": "Correo",
+          "placeholder": "Tu correo",
+          "error": "El correo es requerido",
+          "invalid": "El correo no es válido"
+        },
+        "message": {
+          "label": "Mensaje",
+          "placeholder": "Tu mensaje",
+          "error": "El mensaje es requerido"
+        },
+        "submit": "Enviar Mensaje",
+        "sending": "Enviando...",
+        "success": "¡Mensaje enviado! Te responderemos lo antes posible."
+      },
+      "contact": {
+        "email": {
+          "title": "Envíanos un Correo",
+          "subtitle": "Nuestro amable equipo está aquí para ayudar.",
+          "value": "hola@ejemplo.com"
+        },
+        "phone": {
+          "title": "Llámanos",
+          "subtitle": "Lun-Vie de 8am a 5pm.",
+          "value": "+1 (555) 000-0000"
+        },
+        "visit": {
+          "title": "Visítanos",
+          "subtitle": "Ven a saludar a nuestra oficina.",
+          "value": "123 Calle Principal, San Francisco, CA 94105"
+        }
+      }
+    },
+    "newsletter": {
+      "title": "Mantente Actualizado",
+      "subtitle": "Suscríbete a nuestro boletín para recibir las últimas actualizaciones, consejos y ofertas exclusivas.",
+      "placeholder": "Ingresa tu correo",
+      "button": "Suscribirse",
+      "subscribing": "Suscribiendo...",
+      "success": "Te has suscrito exitosamente a nuestro boletín.",
+      "privacy": "Respetamos tu privacidad. Cancela la suscripción en cualquier momento.",
+      "error": {
+        "required": "El correo es requerido",
+        "invalid": "Por favor ingresa un correo válido"
+      }
+    },
+    "footer": {
+      "company": {
+        "title": "Empresa",
+        "links": {
+          "about": "Acerca de",
+          "careers": "Carreras",
+          "press": "Prensa",
+          "blog": "Blog"
+        }
+      },
+      "product": {
+        "title": "Producto",
+        "links": {
+          "features": "Características",
+          "pricing": "Precios",
+          "integrations": "Integraciones",
+          "faq": "Preguntas Frecuentes"
+        }
+      },
+      "resources": {
+        "title": "Recursos",
+        "links": {
+          "documentation": "Documentación",
+          "guides": "Guías",
+          "support": "Soporte",
+          "api": "API"
+        }
+      },
+      "legal": {
+        "title": "Legal",
+        "links": {
+          "privacy": "Privacidad",
+          "terms": "Términos",
+          "cookies": "Política de Cookies",
+          "licenses": "Licencias"
+        }
+      },
+      "copyright": "© {year} Company, Inc. Todos los derechos reservados."
+    }
+  }
+    

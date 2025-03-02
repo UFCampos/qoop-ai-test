@@ -2,8 +2,13 @@
 
 import Image from "next/image";
 import ThemeToggleButton from "./ThemeToggleButton";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function Header() {
+export default function Header({
+  lang,
+}: {
+  lang: string 
+}) {
   return (
     <header className="flex justify-between items-center py-4 px-8 sticky top-0 left-0 z-50">
       <ThemeToggleButton />
@@ -14,6 +19,7 @@ export default function Header() {
         alt="logo"
         className="mx-auto invert"
       />
+      <LanguageSwitcher currentLang={lang} />
     </header>
   );
 }
