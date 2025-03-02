@@ -53,6 +53,10 @@ Ensure you have the following installed:
    yarn dev
    ```
 4. Open your browser and navigate to `http://localhost:3000`
+5. Add your Groq API key to an .env file
+    ```
+    GROQ_API_KEY='your_api_key'
+   ```
 
 ## API Integration
 
