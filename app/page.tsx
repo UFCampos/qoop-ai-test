@@ -1,5 +1,6 @@
 import ContactSection from "@/components/contact";
 import FeaturesSection from "@/components/features";
+import Footer from "@/components/footer";
 import HeroSection from "@/components/hero-section";
 import PricingSection from "@/components/plans";
 import TestimonialsSection from "@/components/testimonials";
@@ -12,6 +13,7 @@ export default function Home() {
       <TestimonialsSection/>
       <PricingSection/>
       <ContactSection/>
+      <Footer/>
     </main>
   );
 }
