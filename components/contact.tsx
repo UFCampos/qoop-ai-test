@@ -25,7 +25,7 @@ export default function ContactSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Have questions or need assistance? We're here to help!
+            Have questions or need assistance? We&apos;re here to help!
           </motion.p>
         </div>
 

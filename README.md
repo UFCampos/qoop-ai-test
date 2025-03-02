@@ -11,6 +11,7 @@ Qoop.ai is a modern, interactive, and high-performance home page for a fictional
 - **Styling:** Tailwind CSS v4 + ShadCN (Canary)
 - **Animations:** Framer Motion
 - **API Integration:** Fetching testimonials from `https://jsonplaceholder.typicode.com/comments`
+- **AI Analysis:** Vercel AI API + Groq provider
 
 ## Features
 
@@ -20,6 +21,7 @@ Qoop.ai is a modern, interactive, and high-performance home page for a fictional
 - **Dark Mode Toggle** 
 - **Interactive Elements:** Hover and click effects
 - **Newsletter Subscription Form** (mocked API call)
+- **AI Analysis:** Analyses and categorizes testimonials by sentiment.
 
 ## Getting Started
 
