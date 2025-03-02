@@ -4,9 +4,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useContactForm } from "@/hooks/useContactForm";
+import { getDictionary } from "@/lib/dictionary";
 
-export default function ContactForm() {
-  const { formData, errors, isSubmitting, handleChange, handleSubmit } = useContactForm();
+interface ContactFormProps {
+  dict: Awaited<ReturnType<typeof getDictionary>>["contact"]["form"];
+}
+export default function ContactForm({ dict }: ContactFormProps) {
+  const { formData, errors, isSubmitting, handleChange, handleSubmit } =
+    useContactForm(dict);
 
   return (
     <motion.div
@@ -17,48 +22,58 @@ export default function ContactForm() {
     >
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="space-y-2">
-          <Label htmlFor="name">Name</Label>
+          <Label htmlFor="name">{dict.name.label}</Label>
           <Input
             id="name"
             name="name"
-            placeholder="Your name"
+            placeholder={dict.name.placeholder}
             value={formData.name}
             onChange={handleChange}
             className={errors.name ? "border-red-500" : ""}
           />
-          {errors.name && <p className="text-red-500 text-sm">{errors.name}</p>}
+          {errors.name && (
+            <p className="text-red-500 text-sm">{dict.name.error}</p>
+          )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="email">Email</Label>
+          <Label htmlFor="email">{dict.email.label}</Label>
           <Input
             id="email"
             name="email"
             type="email"
-            placeholder="Your email"
+            placeholder={dict.email.placeholder}
             value={formData.email}
             onChange={handleChange}
             className={errors.email ? "border-red-500" : ""}
           />
-          {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+          {errors.email && (
+            <p className="text-red-500 text-sm">
+              {errors.email.includes("required")
+                ? dict.email.error
+                : dict.email.invalid}
+            </p>
+          )}
         </div>
 
         <div className="space-y-2">
-          <Label htmlFor="message">Message</Label>
+          <Label htmlFor="message">{dict.message.error}</Label>
           <Textarea
             id="message"
             name="message"
-            placeholder="Your message"
+            placeholder={dict.message.placeholder}
             rows={5}
             value={formData.message}
             onChange={handleChange}
             className={errors.message ? "border-red-500" : ""}
           />
-          {errors.message && <p className="text-red-500 text-sm">{errors.message}</p>}
+          {errors.message && (
+            <p className="text-red-500 text-sm">{dict.message.error}</p>
+          )}
         </div>
 
         <Button type="submit" className="w-full" disabled={isSubmitting}>
-          {isSubmitting ? "Sending..." : "Send Message"}
+          {isSubmitting ? dict.sending : dict.submit}
         </Button>
       </form>
     </motion.div>

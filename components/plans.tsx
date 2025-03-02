@@ -3,49 +3,13 @@
 import { motion } from "framer-motion";
 import PricingPlanCard from "./PricingPlanCard";
 import SectionHeader from "./SectionHeader";
+import { getDictionary } from "@/lib/dictionary";
 
-const pricingPlans = [
-  {
-    name: "Starter",
-    price: "$29",
-    description: "Perfect for individuals and small projects",
-    features: ["Up to 5 projects", "Basic analytics", "24/7 email support", "1GB storage"],
-    recommended: false,
-    cta: "Get Started",
-  },
-  {
-    name: "Professional",
-    price: "$79",
-    description: "Ideal for growing businesses and teams",
-    features: [
-      "Unlimited projects",
-      "Advanced analytics",
-      "Priority support",
-      "10GB storage",
-      "Custom integrations",
-      "Team collaboration tools",
-    ],
-    recommended: true,
-    cta: "Try Pro",
-  },
-  {
-    name: "Enterprise",
-    price: "$199",
-    description: "For large organizations with complex needs",
-    features: [
-      "Everything in Professional",
-      "Dedicated account manager",
-      "Custom solutions",
-      "Unlimited storage",
-      "Advanced security features",
-      "API access",
-    ],
-    recommended: false,
-    cta: "Contact Sales",
-  },
-];
+interface PricingSectionProps {
+  dict: Awaited<ReturnType<typeof getDictionary>>["pricing"];
+}
 
-export default function PricingSection() {
+export default function PricingSection({dict} : PricingSectionProps) {
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -80,8 +44,15 @@ export default function PricingSection() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {pricingPlans.map((plan, index) => (
-            <PricingPlanCard key={index} plan={plan} variants={itemVariants} />
+          {dict.plans.map((plan, index) => (
+            <PricingPlanCard key={index} plan={{
+              name: plan.name,
+              price: plan.price,
+              description: plan.description,
+              features: plan.features,
+              recommended: index === 1,
+              cta: plan.cta
+            }} variants={itemVariants} />
           ))}
         </motion.div>
       </div>

@@ -9,13 +9,14 @@ export interface SentimentAnalysis {
   score: number // 0-100
 }
 
-export async function analyzeSentiment(text: string, rating: number): Promise<SentimentAnalysis> {
+export async function analyzeSentiment(text: string, rating: number, lang: "en" | "es"): Promise<SentimentAnalysis> {
   try {
     const prompt = `
       Analyze the sentiment of this testimonial and provide:
       1. A brief, friendly analysis with an emoji
       2. The overall sentiment (positive, neutral, or negative)
       3. A sentiment score from 0-100 (0 being most negative, 100 being most positive)
+      4. Respond in ${lang === "en" ? "English" : "Spanish"}
       
       Format the response as JSON like this:
       {

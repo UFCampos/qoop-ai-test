@@ -1,9 +1,14 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
+import { type getDictionary } from "@/lib/dictionary"
 import { motion } from "framer-motion"
 
-export default function HeroSection() {
+interface HeroSectionProps {
+    dict: Awaited<ReturnType<typeof getDictionary>>["hero"]
+  }
+
+export default function HeroSection({ dict }: HeroSectionProps) {
     return (
         <section className="relative w-full min-h-[90vh] flex items-center justify-center overflow-hidden">
             <motion.div
@@ -26,7 +31,7 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5 }}
                     >
-                        Transform Your Digital Experience
+                        {dict.title}
                     </motion.h1>
 
                     <motion.p
@@ -35,8 +40,7 @@ export default function HeroSection() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
-                        Elevate your online presence with our cutting-edge platform designed to help you stand out in today&apos;s
-                        competitive market.
+                        {dict.subtitle}
                     </motion.p>
 
                     <motion.div
@@ -48,7 +52,7 @@ export default function HeroSection() {
                             size="lg"
                             className="bg-primary hover:bg-primary/90 text-white text-lg px-8 py-6 h-auto rounded-full transition-all duration-300 hover:scale-105"
                         >
-                            Get Started
+                            {dict.cta}
                         </Button>
                     </motion.div>
                 </div>

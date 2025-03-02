@@ -7,9 +7,14 @@ import TestimonialCard from "./TestimonialCard";
 import SectionHeader from "./SectionHeader";
 import Image from "next/image";
 import { useRef } from "react";
+import { type getDictionary } from "@/lib/dictionary";
 
-export default function TestimonialsSection() {
-  const { testimonials, loading, error, analyzingIds } = useFetchTestimonials();
+interface TestimonialProps {
+  dict: Awaited<ReturnType<typeof getDictionary>>["testimonials"];
+  lang: "en" | "es";
+}
+export default function TestimonialsSection({ dict, lang }: TestimonialProps) {
+  const { testimonials, loading, error, analyzingIds } = useFetchTestimonials(lang);
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -53,19 +58,19 @@ console.log(scrollYProgress, 'SCROLL')
           />
         </motion.div>
         <SectionHeader
-          title="What Our Customers Say"
-          subtitle="Don't just take our word for it — hear from our satisfied customers"
+          title={dict.title}
+          subtitle={dict.subtitle}
         />
 
         {loading ? (
           <div className="flex justify-center items-center py-12">
             <Loader2 className="h-8 w-8 animate-spin text-primary" />
-            <span className="ml-2 text-lg">Loading testimonials...</span>
+            <span className="ml-2 text-lg">{dict.loading}</span>
           </div>
         ) : error ? (
           <div className="text-center text-red-500 py-8">
-            <p>Error: {error}</p>
-            <p>Please try again later.</p>
+            <p>{dict.error.split('. ')[0]}: {error}</p>
+            <p>{dict.error.split('. ')[1]}</p>
           </div>
         ) : (
           <motion.div
@@ -81,6 +86,7 @@ console.log(scrollYProgress, 'SCROLL')
                 testimonial={testimonial}
                 analyzing={analyzingIds.has(testimonial.id)}
                 variants={itemVariants}
+                dict={dict}
               />
             ))}
           </motion.div>

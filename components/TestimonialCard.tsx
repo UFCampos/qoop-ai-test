@@ -4,6 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 import { Badge } from "@/components/ui/badge";
 import { SentimentAnalysis } from "@/app/actions/testimonialAnalysis";
+import { getDictionary } from "@/lib/dictionary";
 
 interface TestimonialCardProps {
   testimonial: {
@@ -15,9 +16,10 @@ interface TestimonialCardProps {
   };
   analyzing: boolean;
   variants: Variants;
+  dict: Awaited<ReturnType<typeof getDictionary>>["testimonials"];
 }
 
-export default function TestimonialCard({ testimonial, analyzing, variants }: TestimonialCardProps) {
+export default function TestimonialCard({ testimonial, analyzing, variants, dict }: TestimonialCardProps) {
   return (
     <motion.div variants={variants}>
       <Card className="h-full">
@@ -34,14 +36,14 @@ export default function TestimonialCard({ testimonial, analyzing, variants }: Te
             {analyzing ? (
               <Badge variant="secondary" className="animate-pulse">
                 <Loader2 className="h-3 w-3 animate-spin mr-1" />
-                Analyzing
+                {dict.aiAnalysis.analyzing}
               </Badge>
             ) : testimonial.sentiment ? (
               <Tooltip>
                 <TooltipTrigger>
                   <Badge variant="secondary" className="flex items-center gap-1 cursor-help">
                     <MessageSquare className="h-3 w-3" />
-                    AI Analysis
+                    {dict.aiAnalysis.analysis}
                   </Badge>
                 </TooltipTrigger>
                 <TooltipContent className="text-wrap max-w-[200px]">
@@ -58,8 +60,15 @@ export default function TestimonialCard({ testimonial, analyzing, variants }: Te
             </div>
             <div className="ml-3">
               <p className="font-medium">{testimonial.name}</p>
-              <p className="text-sm text-muted-foreground">Verified Customer</p>
+              <p className="text-sm text-muted-foreground">{dict.verified}</p>
             </div>
+            {testimonial.sentiment && (
+              <div className="ml-auto text-2xl">
+                {testimonial.sentiment.sentiment === "positive" && "😊"}
+                {testimonial.sentiment.sentiment === "neutral" && "😐"}
+                {testimonial.sentiment.sentiment === "negative" && "😞"}
+              </div>
+            )}
           </div>
         </CardContent>
       </Card>

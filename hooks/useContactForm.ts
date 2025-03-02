@@ -1,3 +1,4 @@
+import { getDictionary } from "@/lib/dictionary";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -13,7 +14,7 @@ interface FormErrors {
   message?: string;
 }
 
-export function useContactForm() {
+export function useContactForm(dict: Awaited<ReturnType<typeof getDictionary>>["contact"]["form"]) {
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -64,8 +65,8 @@ export function useContactForm() {
       setTimeout(() => {
         setIsSubmitting(false);
         setFormData({ name: "", email: "", message: "" });
-        toast("Message sent!", {
-          description: "We'll get back to you as soon as possible.",
+        toast(dict.success.split('! ')[0], {
+          description: dict.success.split('! ')[1],
         });
       }, 1500);
     }

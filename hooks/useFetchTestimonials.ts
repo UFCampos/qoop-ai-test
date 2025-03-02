@@ -17,7 +17,7 @@ interface ApiResponse {
   body: string;
 }
 
-export function useFetchTestimonials() {
+export function useFetchTestimonials(lang: "en" | "es") {
   const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -62,7 +62,7 @@ export function useFetchTestimonials() {
     setAnalyzingIds((prev) => new Set(prev).add(id));
 
     try {
-      const sentiment = await analyzeSentiment(text, rating);
+      const sentiment = await analyzeSentiment(text, rating, lang);
       setTestimonials((prev) => prev.map((t) => (t.id === id ? { ...t, sentiment } : t)));
     } catch (error) {
       setError("Failed to analyze sentiment for testimonial with ID " + id);

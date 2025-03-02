@@ -10,19 +10,19 @@ import { getDictionary } from "@/lib/dictionary";
 export default async function Home({
   params: { lang },
 }: {
-  params: { lang: string }
+  params: { lang: "en" | "es" }
 }) {
   const dict = await getDictionary(lang)
 
   return (
     <main className="min-h-screen">
       <HeroSection dict={dict.hero}/>
-      <FeaturesSection/>
-      <TestimonialsSection/>
-      <PricingSection/>
-      <ContactSection/>
-      <NewsletterSection/>
-      <Footer/>
+      <FeaturesSection dict={dict.features}/>
+      <TestimonialsSection dict={dict.testimonials} lang={lang}/>
+      <PricingSection dict={dict.pricing}/>
+      <ContactSection dict={dict.contact}/>
+      <NewsletterSection dict={dict.newsletter}/>
+      <Footer dict={dict.footer}/>
     </main>
   );
 }
